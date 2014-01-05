@@ -1,6 +1,10 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenTK", "OpenTK", "{79F75587-3EC8-474D-96AB-2C1C8636DFB3}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenderHeightMap", "RenderHeightMap\RenderHeightMap.csproj", "{31B2F745-D6A1-4204-983B-FE157F118578}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Texture2D", "Texture2D\Texture2D.csproj", "{24977320-A945-48F7-AB22-88AC6061BD23}"
@@ -12,8 +16,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GLControlTest", "GLControlTest\GLControlTest.csproj", "{98DD692D-B7E5-4768-BE9F-BE8E988A6783}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerrainGL", "TerrainGL\TerrainGL.csproj", "{43FB2B81-5190-4534-8601-84F853750F51}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenTK", "OpenTK", "{79F75587-3EC8-474D-96AB-2C1C8636DFB3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTK", "..\..\opentk\Source\OpenTK\OpenTK.csproj", "{A37A7E14-0000-0000-0000-000000000000}"
 EndProject
