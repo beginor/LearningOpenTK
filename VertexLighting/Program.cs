@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
+﻿namespace VertexLighting {
 
-namespace VertexLighting {
-
-	class Program {
-
-		static void Main(string[] args) {
-			using (MainWindow win = new MainWindow()) {
-				win.Run();
-			}
-		}
-	}
+    internal class Program {
+    
+        private static void Main(string[] args) {
+            using (var win = new MainWindow()) {
+                win.Run();
+            }
+        }
+    }
 }

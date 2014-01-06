@@ -1,9 +1,9 @@
 ﻿namespace Examples {
 
-	public interface IGameComponent {
+    public interface IGameComponent {
+    
+        void Draw();
 
-		void Draw();
-
-		void Update();
-	}
+        void Update();
+    }
 }

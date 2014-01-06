@@ -2,20 +2,18 @@
 
 namespace Examples {
 
-	public class GameComponentCollection : Collection<IGameComponent> {
+    public class GameComponentCollection : Collection<IGameComponent> {
+    
+        public void Draw() {
+            foreach (IGameComponent component in Items) {
+                component.Draw();
+            }
+        }
 
-		public void Draw() {
-			foreach (var component in this.Items) {
-				component.Draw();
-			}
-		}
-
-		public void Update() {
-			foreach (var component in this.Items) {
-				component.Update();
-			}
-		}
-	}
-
-
+        public void Update() {
+            foreach (IGameComponent component in Items) {
+                component.Update();
+            }
+        }
+    }
 }
