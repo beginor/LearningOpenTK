@@ -78,7 +78,7 @@ namespace GlLighting {
 			GL.Hint(HintTarget.FogHint, HintMode.Nicest);
 		}
 
-		public override void OnLoad(EventArgs e) {
+		protected override void OnLoad(EventArgs e) {
 			this.Init();
 		}
 

@@ -15,7 +15,7 @@ namespace RenderHeightMap {
 
 		private Size _size;
 		private byte[,] _heightTable;
-		private BeginMode _terrainRenderStyle = BeginMode.Quads;
+		private PrimitiveType _terrainRenderStyle = PrimitiveType.Quads;
 
 		private int _renderSteps = 10;
 
@@ -57,7 +57,7 @@ namespace RenderHeightMap {
 			base.VSync = VSyncMode.On;
 		}
 
-		public override void OnLoad(EventArgs e) {
+		protected override void OnLoad(EventArgs e) {
 			base.OnLoad(e);
 			GL.ClearColor(Color.MidnightBlue);
 			GL.PointSize(3.0F);
@@ -98,13 +98,13 @@ namespace RenderHeightMap {
 					this.Exit();
 					break;
 				case Key.Number1:
-					this._terrainRenderStyle = BeginMode.Points;
+					this._terrainRenderStyle = PrimitiveType.Points;
 					break;
 				case Key.Number2:
-					this._terrainRenderStyle = BeginMode.Lines;
+					this._terrainRenderStyle = PrimitiveType.Lines;
 					break;
 				case Key.Number3:
-					this._terrainRenderStyle = BeginMode.Quads;
+					this._terrainRenderStyle = PrimitiveType.Quads;
 					break;
 				case Key.Plus:
 					this.RenderSteps -= 1;
@@ -173,11 +173,11 @@ namespace RenderHeightMap {
 			for (int x = 0; x < this._size.Width - this.RenderSteps; x++) {
 				for (int z = 0; z < this._size.Height - this.RenderSteps; z++) {
 					GL.Color3(this._heightTable[x, z], this._heightTable[x, z], this._heightTable[x, z]);
-					if (this._terrainRenderStyle == BeginMode.Points) {
+					if (this._terrainRenderStyle == PrimitiveType.Points) {
 						GL.Vertex3(x, this._heightTable[x, z], z);
 						this._diagVertices++;
 					}
-					else if (this._terrainRenderStyle == BeginMode.Lines) {
+					else if (this._terrainRenderStyle == PrimitiveType.Lines) {
 						// 0, 0 -> 1, 0
 						GL.Vertex3(x, this._heightTable[x, z], z);
 						GL.Vertex3(x + RenderSteps, this._heightTable[x + RenderSteps, z], z);
@@ -193,7 +193,7 @@ namespace RenderHeightMap {
 
 						this._diagVertices += 8;
 					}
-					else if (this._terrainRenderStyle == BeginMode.Quads) {
+					else if (this._terrainRenderStyle == PrimitiveType.Quads) {
 						// 0,0
 						GL.Vertex3(x, this._heightTable[x, z], z);
 						// 1,0

@@ -40,7 +40,7 @@ namespace GlReflection {
 			GL.BindTexture(TextureTarget.Texture2D, this._texture[0]);
 			GL.Translate(0, 2.5F, 0);
 			GL.Scale(2, 2, 2);
-			GL.Begin(BeginMode.Quads);
+			GL.Begin(PrimitiveType.Quads);
 			GL.TexCoord2(1, 0);
 			GL.Vertex3(-1, -1, 0);
 			GL.TexCoord2(1, 1);
@@ -59,7 +59,7 @@ namespace GlReflection {
 			GL.BindTexture(TextureTarget.Texture2D, this._texture[1]);
 			GL.Translate(0, -2.5, 0);
 			GL.Scale(4, 2, 4);
-			GL.Begin(BeginMode.Quads);
+			GL.Begin(PrimitiveType.Quads);
 			GL.TexCoord2(1, 0);
 			GL.Vertex3(-1, -1, 1);
 			GL.TexCoord2(1, 1);
@@ -158,7 +158,7 @@ namespace GlReflection {
 			GL.MatrixMode(MatrixMode.Modelview);
 		}
 
-		public override void OnLoad(EventArgs e) {
+		protected override void OnLoad(EventArgs e) {
 			base.OnLoad(e);
 			this.Init();
 		}
@@ -173,7 +173,7 @@ namespace GlReflection {
 			this.Display();
 		}
 
-		public override void OnUnload(EventArgs e) {
+		protected override void OnUnload(EventArgs e) {
 			base.OnUnload(e);
 			FreeTexture(this._texture[0]);
 			FreeTexture(this._texture[1]);

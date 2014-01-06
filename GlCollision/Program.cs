@@ -75,7 +75,7 @@ namespace GlCollision {
 			//GL.Disable(EnableCap.DepthTest);
 		}
 
-		public override void OnLoad(EventArgs e) {
+		protected override void OnLoad(EventArgs e) {
 			base.OnLoad(e);
 			this.Init();
 		}

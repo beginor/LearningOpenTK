@@ -165,23 +165,23 @@ namespace TerrainGL {
 				fog = true;
 			}
 
-			GL.EnableClientState(EnableCap.VertexArray);
+			GL.EnableClientState(ArrayCap.VertexArray);
 			GL.BindBuffer(BufferTarget.ArrayBuffer, _vboId[0]);
 			GL.VertexPointer(3, VertexPointerType.Float, Vector3.SizeInBytes, IntPtr.Zero);
 
-			GL.EnableClientState(EnableCap.TextureCoordArray);
+			GL.EnableClientState(ArrayCap.TextureCoordArray);
 			GL.BindBuffer(BufferTarget.ArrayBuffer, _vboId[1]);
 			GL.TexCoordPointer(2, TexCoordPointerType.Float, Vector2.SizeInBytes, IntPtr.Zero);
 
 			GL.BindBuffer(BufferTarget.ElementArrayBuffer, _vboId[2]);
 
-			GL.DrawElements(BeginMode.Triangles, Indices.Length, DrawElementsType.UnsignedInt, IntPtr.Zero);
+			GL.DrawElements(PrimitiveType.Triangles, Indices.Length, DrawElementsType.UnsignedInt, IntPtr.Zero);
 
 			GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
 			GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
 
-			GL.DisableClientState(EnableCap.TextureCoordArray);
-			GL.DisableClientState(EnableCap.VertexArray);
+			GL.DisableClientState(ArrayCap.TextureCoordArray);
+			GL.DisableClientState(ArrayCap.VertexArray);
 
 			if (fog) {
 				GL.Disable(EnableCap.Fog);

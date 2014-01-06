@@ -66,7 +66,7 @@ namespace GlMatrix {
 			this.Display();
 		}
 
-		public override void OnLoad(EventArgs e) {
+		protected override void OnLoad(EventArgs e) {
 			base.OnLoad(e);
 			//GL.Enable(EnableCap.DepthTest);
 			//GL.DepthFunc(DepthFunction.Lequal);
@@ -76,7 +76,7 @@ namespace GlMatrix {
 		}
 
 		static void DisplayCube(Shape cube) {
-			GL.Begin(BeginMode.Triangles);
+			GL.Begin(PrimitiveType.Triangles);
 			foreach (var index in cube.Indices) {
 				GL.Color3(cube.Colors[index]);
 				GL.Vertex3(cube.Vertices[index]);

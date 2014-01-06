@@ -14,15 +14,15 @@ namespace VertexLighting {
 		Shape shape = new Plane(32, 32, 4, 4);
 
 		#region OnLoad
-		public override void OnLoad(EventArgs e) {
+		protected override void OnLoad(EventArgs e) {
 			base.OnLoad(e);
 
 			GL.ClearColor(Color.MidnightBlue);
 			GL.Enable(EnableCap.DepthTest);
 			//GL.Enable(EnableCap.CullFace);
 
-			GL.EnableClientState(EnableCap.VertexArray);
-			GL.EnableClientState(EnableCap.NormalArray);
+			GL.EnableClientState(ArrayCap.VertexArray);
+			GL.EnableClientState(ArrayCap.NormalArray);
 			
 			GL.VertexPointer(3, VertexPointerType.Float, 0, shape.Vertices);
 			GL.NormalPointer(NormalPointerType.Float, 0, shape.Normals);
@@ -122,7 +122,7 @@ namespace VertexLighting {
 
 			GL.Rotate(x_angle, 0.0f, 1.0f, 0.0f);
 
-			GL.Begin(BeginMode.Triangles);
+			GL.Begin(PrimitiveType.Triangles);
 			foreach (int index in shape.Indices) {
 				GL.Normal3(shape.Normals[index]);
 				GL.Vertex3(shape.Vertices[index]);

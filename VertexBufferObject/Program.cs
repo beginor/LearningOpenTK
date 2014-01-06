@@ -34,7 +34,7 @@ namespace VertexBufferObject {
 
 		#region OnLoad override
 
-		public override void OnLoad(EventArgs e) {
+		protected override void OnLoad(EventArgs e) {
 			base.OnLoad(e);
 
 			string version = GL.GetString(StringName.Version);
@@ -138,7 +138,7 @@ namespace VertexBufferObject {
 			//GL.PushClientAttrib(ClientAttribMask.ClientVertexArrayBit);
 
 			//GL.EnableClientState(EnableCap.TextureCoordArray);
-			GL.EnableClientState(EnableCap.VertexArray);
+			GL.EnableClientState(ArrayCap.VertexArray);
 
 			GL.BindBuffer(BufferTarget.ArrayBuffer, handle.VboID);
 			GL.BindBuffer(BufferTarget.ElementArrayBuffer, handle.EboID);
@@ -146,13 +146,13 @@ namespace VertexBufferObject {
 			//GL.TexCoordPointer(2, TexCoordPointerType.Float, vector2_size, (IntPtr)vector2_size);
 			GL.VertexPointer(3, VertexPointerType.Float, Vector3.SizeInBytes, IntPtr.Zero);
 
-			GL.DrawElements(BeginMode.Triangles, handle.NumElements, DrawElementsType.UnsignedInt, IntPtr.Zero);
+			GL.DrawElements(PrimitiveType.Triangles, handle.NumElements, DrawElementsType.UnsignedInt, IntPtr.Zero);
 			//GL.DrawArrays(BeginMode.LineLoop, 0, vbo.element_count);
 
 			GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
 			GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
 
-			GL.DisableClientState(EnableCap.VertexArray);
+			GL.DisableClientState(ArrayCap.VertexArray);
 			//GL.DisableClientState(EnableCap.TextureCoordArray);
 
 			//GL.PopClientAttrib();

@@ -21,7 +21,7 @@ namespace GlRatation {
 			//GL.Rotate(this._angle * 0.18F / (float)Math.PI, Vector3.UnitZ);
 			GL.Rotate(this._angle*0.18F/(float) Math.PI, Vector3.One);
 			GL.Color4(Color.FromArgb(100, Color.Red));
-			GL.Begin(BeginMode.Triangles);
+			GL.Begin(PrimitiveType.Triangles);
 			foreach (var index in _cube.Indices) {
 				GL.Vertex3(this._cube.Vertices[index]);
 			}
@@ -47,7 +47,7 @@ namespace GlRatation {
 			GL.LoadMatrix(ref proj);
 		}
 
-		public override void OnLoad(EventArgs e) {
+		protected override void OnLoad(EventArgs e) {
 			GL.ClearColor(System.Drawing.Color.MidnightBlue);
 			GL.Enable(EnableCap.DepthTest);
 			GL.Enable(EnableCap.Blend);

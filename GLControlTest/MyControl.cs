@@ -91,7 +91,7 @@ namespace GLControlTest {
 
 			GL.Rotate(this._rotation, Vector3.UnitZ);
 			
-			GL.Begin(BeginMode.Triangles);
+			GL.Begin(PrimitiveType.Triangles);
 			GL.Vertex2(10, 20);
 			GL.Vertex2(100, 20);
 			GL.Vertex2(100, 50);

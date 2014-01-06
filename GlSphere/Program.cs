@@ -25,7 +25,7 @@ namespace GlSphere {
 			//GL.PushMatrix();
 			//GL.LoadIdentity();
 			GL.BindTexture(TextureTarget.Texture2D, texture);
-			GL.Begin(BeginMode.Quads);
+			GL.Begin(PrimitiveType.Quads);
 			foreach (var index in _sphere.Indices) {
 				GL.TexCoord2(_sphere.Texcoords[index]);
 				GL.Vertex3(_sphere.Vertices[index]);
@@ -40,7 +40,7 @@ namespace GlSphere {
 
 		void DisplayXyz() {
 			GL.LineWidth(4.0F);
-			GL.Begin(BeginMode.Lines);
+			GL.Begin(PrimitiveType.Lines);
 			GL.Color3(Color.Red);
 			GL.Vertex3(-1000, 0, 0);
 			GL.Vertex3(1000, 0, 0);
@@ -107,7 +107,7 @@ namespace GlSphere {
 			GL.LoadMatrix(ref projMatrix);
 		}
 
-		public override void OnLoad(EventArgs e) {
+		protected override void OnLoad(EventArgs e) {
 			base.OnLoad(e);
 			this.Init();
 		}
@@ -126,7 +126,7 @@ namespace GlSphere {
 			GL.DeleteTextures(1, ref texture);
 		}
 
-		public override void OnUnload(EventArgs e) {
+		protected override void OnUnload(EventArgs e) {
 			base.OnUnload(e);
 			FreeTexture(this._textures[0]);
 		}
