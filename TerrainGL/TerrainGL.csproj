@@ -40,6 +40,12 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="OpenTK">
+      <HintPath>..\opentk\Binaries\OpenTK\Release\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl">
+      <HintPath>..\opentk\Binaries\OpenTK\Release\OpenTK.GLControl.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -66,14 +72,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\opentk\Source\GLControl\OpenTK.GLControl.csproj">
-      <Project>{A625BE88-0000-0000-0000-000000000000}</Project>
-      <Name>OpenTK.GLControl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\opentk\Source\OpenTK\OpenTK.csproj">
-      <Project>{A37A7E14-0000-0000-0000-000000000000}</Project>
-      <Name>OpenTK %28OpenTK\OpenTK%29</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Examples\Examples.csproj">
       <Project>{CE6759F4-8C28-4FE2-A790-4CD3B6D0F246}</Project>
       <Name>Examples</Name>
